@@ -5,7 +5,7 @@ import bcrypt
 
 def next_user():
     header("Nový uživatel")
-    file_path = "user.json"
+    file_path = "users.json"
     users = load_json(file_path)
     new_user_name = input("Napiš uživatelské jméno: ").strip()
     if not new_user_name:
@@ -14,6 +14,7 @@ def next_user():
     
     if any(u['username'] == new_user_name for u in users):
         print("Chyba: Toto uživatelské jméno už existuje.")
+        continue_prompt()
         return
     for i in range(3):
         print(f"Pokus {i+1} z 3 pro vložení hesla:")

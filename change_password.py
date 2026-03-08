@@ -10,6 +10,9 @@ def change_password():
     
     # 1. We load the data into a variable ONCE
     all_users = load_json(file_path)
+    print("Uživatelé v systému:")
+    for user in all_users:
+        print(f"{user['username']}")
     
     username = input("Zadejte své uživatelské jméno: ")
     current_password = input("Zadejte své současné heslo: ")

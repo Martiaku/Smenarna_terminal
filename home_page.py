@@ -9,12 +9,10 @@ from change_password import change_password
 def home_page():
     while True:
         header("Hlavní menu")
-        print("\n1 - Převod peněz\n2 - Určování kurzů\n3 - Pokladna\n4 - Vložení měny\n5 - Nový uživatel\n6 - Změna hesla\nq - Ukončení programu")
+        print("\n1 - Převod peněz\n2 - Určování kurzů\n3 - Pokladna\n4 - Vložení měny\n5 - Přidání uživatele\n6 - Změna hesla\nq - Ukončení programu")
         choice = input("Vložte prosím číslo požadavku (1-6) nebo 'q' pro ukončení programu: ")
         match choice:
             case "1":
-                print("Zde bude impretace pro výpočet převodu")
-                print("Táto funkce bude v budoucí aktualizaci aplikována.")
                 continue_prompt()
                 transfer_money()
             case "2":

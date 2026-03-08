@@ -38,6 +38,6 @@ def transfer_money():
         v_korunach = amount * RATES[currency_input]
         vysledek = v_korunach / RATES[currency_output]
 
-        print(f"\nHOTOVO: {amount} {NAME_CURRENCY[currency_input]} = {vysledek:.2f} {NAME_CURRENCY[currency_output]}")
+        print(f"\nPřevod: {amount} {NAME_CURRENCY[currency_input]} = {vysledek:.2f} {NAME_CURRENCY[currency_output]} při kurzu {RATES[currency_output]:.2f} Kč/{NAME_CURRENCY[currency_output]}")
         continue_prompt()
         break
