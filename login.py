@@ -18,7 +18,7 @@ def ensure_default_admin(users, file_path):
 
 # --- Main login process ---
 def login():
-    file_path = "user.json"
+    file_path = "users.json"
     users = load_json(file_path)
     # Validate the existence of the user database
     users = ensure_default_admin(users, file_path)
