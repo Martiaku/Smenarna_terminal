@@ -7,9 +7,8 @@ from currency_rates import NAME_CURRENCY, RATES
 def transfer_money():
     while True:
         header("Výpočet směny měn")
-        print("1 - CZK - Koruna česká")
-        print("2 - EUR - Euro")
-        print("3 - USD - Americký dolar")   
+        for key, value in NAME_CURRENCY.items():
+            print(f"{key} - {value}")   
         currency_input = input("Vlož číslo měny vstupu: ")
         if currency_input == "q":
             break
@@ -31,8 +30,8 @@ def transfer_money():
             continue_prompt()
             continue
         
-        v_korunach = amount / RATES[currency_input]
-        vysledek = v_korunach * RATES[currency_output]
+        v_korunach = amount * RATES[currency_input]
+        vysledek = v_korunach / RATES[currency_output]
 
         print(f"\nHOTOVO: {amount} {NAME_CURRENCY[currency_input]} = {vysledek:.2f} {NAME_CURRENCY[currency_output]}")
         continue_prompt()
