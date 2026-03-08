@@ -3,6 +3,7 @@ from utils import header, continue_prompt
 from transfer_money import transfer_money
 from next_user import next_user
 from change_password import change_password
+from cash_register_menu import cash_register_menu
 
 # This file contains the main home page of the application.
 
@@ -13,16 +14,13 @@ def home_page():
         choice = input("Vložte prosím číslo požadavku (1-6) nebo 'q' pro ukončení programu: ")
         match choice:
             case "1":
-                continue_prompt()
                 transfer_money()
             case "2":
                 print("Zde bude impretace pro určení kurzů měn")
                 print("Táto funkce bude v budoucí aktualizaci aplikována.")
                 continue_prompt()
             case "3":
-                print("Zde bude impretace pro pokladnu")
-                print("Táto funkce bude v budoucí aktualizaci aplikována.")
-                continue_prompt()
+                cash_register_menu()
             case "4":
                 print("Zde bude impretace pro vložení měn")
                 print("Táto funkce bude v budoucí aktualizaci aplikována.")
