@@ -47,7 +47,7 @@ python next_user.py
 
 ### Security Notes
 - Passwords are hashed with `bcrypt`.
-- Do not commit `user.json` to a public repository.
+- Do not commit `users.json` to a public repository.
 
 ---
 
@@ -98,4 +98,4 @@ python next_user.py
 
 ### Bezpečnost
 - Hesla jsou hashovaná pomocí `bcrypt`.
-- `user.json` necommitovat do veřejného repozitáře.
+- `users.json` necommitovat do veřejného repozitáře.

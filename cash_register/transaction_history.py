@@ -12,7 +12,7 @@ def transaction_history():
         print(f"{'Čas':<20} | {'Typ':<10} | {'Částka':<10} | {'Měna':<5} | {'Uživatel':<10}")
         print("-" * 65)
         for log in logs:
-            t_type = "PŘÍJEM" if log['type'] == 'deposit' else "VÝBĚR"
+            t_type = log['type']
             print(f"{log['ts']:<20} | {t_type:<10} | {log['amount']:<10.2f} | {log['currency']:<5} | {log['user']:<10}")
     
     continue_prompt()

@@ -30,10 +30,12 @@ def validation_date(prompt):
 def validation_float(prompt):
     """Validates that the input is a valid float number."""
     while True:
-        value = input(prompt)
+        value = input(prompt).strip()
         if value.lower() == "q":
             return None
         try:
-            return float(value)
+            # Allow comma as decimal separator
+            normalized = value.replace(",", ".")
+            return float(normalized)
         except ValueError:
             print("Neplatný vstup!!! Zadejte číslo (např. 100.50).")
