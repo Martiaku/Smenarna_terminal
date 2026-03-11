@@ -18,24 +18,12 @@ def cash_register_menu():
         choice = input("Vložte prosím číslo požadavku (1-4) nebo 'q' pro návrat do hlavního menu: ")
         match choice:
             case "1":
-                print("Zde bude impretace pro příjem peněz do pokladny")
-                print("Táto funkce bude v budoucí aktualizaci aplikována.")
-                continue_prompt()
                 deposit_money()
             case "2":
-                print("Zde bude impretace pro výdej peněz z pokladny")
-                print("Táto funkce bude v budoucí aktualizaci aplikována.")
-                continue_prompt()
                 withdraw_money()
             case "3":
-                print("Zde bude impretace pro stav pokladny")
-                print("Táto funkce bude v budoucí aktualizaci aplikována.")
-                continue_prompt()
                 cashier_balance()
             case "4":
-                print("Zde bude impretace pro historii transakcí")
-                print("Táto funkce bude v budoucí aktualizaci aplikována.")
-                continue_prompt()
                 transaction_history()
             case "q":
                 break

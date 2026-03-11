@@ -44,7 +44,7 @@ def login():
         print("\nNeplatne jmeno nebo heslo")
         continue_prompt()
     # Response to exhausted attempts
-    print("Prilis mnoho neuspesnych pokusu. Pristup zamitnut.")
+    print("Příliš mnoho neúspěšných pokusů. Přístup zamítnut.")
 
 # --- Entry point of the application ---
 if __name__ == "__main__":

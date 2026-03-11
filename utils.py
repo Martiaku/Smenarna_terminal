@@ -4,6 +4,7 @@
 
 import os
 import json
+from datetime import datetime
 current_user = "Neznámý uživatel"
 
 def clear_terminal():
@@ -50,3 +51,26 @@ def save_json(file_path, data):
     except IOError as e:
         print(f"Chyba při ukládání souboru {file_path}: {e}")
         print(f"Data nebyla uložena !!!")
+        
+        
+def add_transaction_log(t_type, amount, currency, balance_after):
+    file_path = "cash_register_transactions.json"
+    
+    # Load existing history (if file does not exist, load_json returns [])
+    history = load_json(file_path)
+    
+    # Create a new record
+    new_record = {
+        "ts": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "type": t_type,
+        "amount": amount,
+        "currency": currency,
+        "balance_after": balance_after,
+        "user": current_user 
+    }
+    
+    #  Adding to the list
+    history.append(new_record)
+    
+    # Save back to the file
+    save_json(file_path, history)

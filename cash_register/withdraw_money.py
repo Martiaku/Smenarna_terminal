@@ -1,5 +1,5 @@
 
-from utils import load_json, save_json, header, continue_prompt
+from utils import load_json, save_json, header, continue_prompt, add_transaction_log
 from validation import validation_float
 from currency_rates import NAME_CURRENCY, RATES
 
@@ -29,7 +29,7 @@ def withdraw_money():
         print(f" V pokladně není žádná hotovost v měně {currency_code}.")
         return
 
-    amount = validation_float(f"Zadej částku k výběru (max {current_balance:.2f}): ")
+    amount = validation_float(f"Zadej částku k výběru (max {current_balance:.2f}) nebo dej 'q' pro zrušení: ")
     
     if amount is None or amount <= 0:
         print(" Neplatná částka.")
@@ -49,4 +49,6 @@ def withdraw_money():
     save_json(file_path, register_data)
     
     print(f"Úspěšně vybráno {amount} {currency_code}. Transakce byla úspěšná.")
+    add_transaction_log("Výběr z pokladny", amount, currency_code, register_data[currency_code])
     print(f"Nový zůstatek {currency_code}: {register_data[currency_code]:.2f}")
+    continue_prompt()

@@ -1,0 +1,34 @@
+[
+    {
+        "ts": "2026-03-11 20:20:49",
+        "type": "Příjem do pokladny",
+        "amount": 5000.0,
+        "currency": "CZK",
+        "balance_after": 5000.0,
+        "user": "admin"
+    },
+    {
+        "ts": "2026-03-11 20:20:58",
+        "type": "Příjem do pokladny",
+        "amount": 471.0,
+        "currency": "EUR",
+        "balance_after": 471.0,
+        "user": "admin"
+    },
+    {
+        "ts": "2026-03-11 20:21:46",
+        "type": "Příjem do pokladny",
+        "amount": 5474000000.0,
+        "currency": "CZK",
+        "balance_after": 5474005000.0,
+        "user": "admin"
+    },
+    {
+        "ts": "2026-03-11 20:22:06",
+        "type": "Výběr z pokladny",
+        "amount": 5474000000.0,
+        "currency": "CZK",
+        "balance_after": 5000.0,
+        "user": "admin"
+    }
+]
