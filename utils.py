@@ -4,6 +4,7 @@
 
 import os
 import json
+current_user = "Neznámý uživatel"
 
 def clear_terminal():
     """Clear the console"""
@@ -14,12 +15,18 @@ def continue_prompt():
     input("Stiskni Enter pro pokračování...")
 
 
+def set_current_user(username):
+    """Set the current user for personalized greetings"""
+    global current_user
+    current_user = username
+
 def header(title):
     """Print a formatted header"""
     clear_terminal()
     print(f"{title}")
+    print(f"Přihlášen uživatel: {current_user}\n")
     print("SOFTWARE PRO SMĚNÁRNY - by Kučera")
-    print("!!! Táto aplikace je ve vývoji, některé funkce nemusí být implementovány !!! \n")
+    print("!!! Tato aplikace je ve vývoji, některé funkce nemusí být implementovány !!! \n")
     
 
 def load_json(file_path):

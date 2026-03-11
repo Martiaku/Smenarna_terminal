@@ -1,6 +1,5 @@
 
-from utils import load_json, save_json, header, continue_prompt
-from validation import validation_float
+from utils import load_json, header, continue_prompt
 
 def cashier_balance():
     header("Zůstatek pokladny")

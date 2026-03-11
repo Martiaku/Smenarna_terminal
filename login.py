@@ -1,4 +1,4 @@
-﻿from utils import header, continue_prompt, clear_terminal, load_json, save_json
+﻿from utils import header, continue_prompt, clear_terminal, load_json, save_json, set_current_user
 from home_page import home_page
 import getpass
 import bcrypt
@@ -35,6 +35,7 @@ def login():
         user = next((u for u in users if u["username"] == username), None)
         # Secure password verification using hash comparison
         if user and bcrypt.checkpw(password.encode("utf-8"), user["password_hash"].encode("utf-8")):
+            set_current_user(username)  # Set the current user for personalized greetings
             print("\nPrihlaseni probehlo uspesne!")
             continue_prompt()
             home_page()
