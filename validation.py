@@ -26,3 +26,14 @@ def validation_date(prompt):
             return date_str
         except ValueError:
             print("Neplatné datum!!! Zadejte datum ve formátu DD.MM.RRRR.")
+            
+def validation_float(prompt):
+    """Validates that the input is a valid float number."""
+    while True:
+        value = input(prompt)
+        if value.lower() == "q":
+            return None
+        try:
+            return float(value)
+        except ValueError:
+            print("Neplatný vstup!!! Zadejte číslo (např. 100.50).")

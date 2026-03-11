@@ -1,6 +1,7 @@
 
 from utils import header, continue_prompt
 from currency_rates import NAME_CURRENCY, RATES
+from validation import validation_float
 
 # Main function for currency conversion logic
 
@@ -27,17 +28,12 @@ def transfer_money():
             continue_prompt()
             continue
         
-        # Input validation: ensure the user enters a valid numeric amount
-        try:
-            amount = float(input(f"Zadej částku v {NAME_CURRENCY[currency_input]}: "))
-        except ValueError:
-            print("Chyba: Musíš zadat číslo (např. 100.50)!")
-            continue_prompt()
-            continue
-        
-        v_korunach = amount * RATES[currency_input]
-        vysledek = v_korunach / RATES[currency_output]
+        amount = validation_float("Zadejte částku, kterou chcete převést: ")
+        if amount is None:
+            break
+        in_CZK = amount * RATES[currency_input]
+        result = in_CZK / RATES[currency_output]
 
-        print(f"\nPřevod: {amount} {NAME_CURRENCY[currency_input]} = {vysledek:.2f} {NAME_CURRENCY[currency_output]} při kurzu {RATES[currency_output]:.2f} Kč/{NAME_CURRENCY[currency_output]}")
+        print(f"\nPřevod: {amount} {NAME_CURRENCY[currency_input]} = {result:.2f} {NAME_CURRENCY[currency_output]} při kurzu {RATES[currency_output]:.2f} Kč/{NAME_CURRENCY[currency_output]}")
         continue_prompt()
         break
