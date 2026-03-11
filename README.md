@@ -39,6 +39,11 @@ python next_user.py
 - `currency_rates.py` - currency rates and mapping
 - `validation.py` - input validation functions
 - `user.json` - local user database (should stay ignored in git)
+- `withdraw_money.py` - Withdraw money from the cash register
+- `deposit_money.py` - Deposit money into the cash register
+- `transaction_history.py` - View transaction history
+- `cash_register.json` - Cash register status (should be ignored in git)
+- `cash_register_transactions.json` - Transaction history log (should be ignored in git)
 
 ### Security Notes
 - Passwords are hashed with `bcrypt`.
@@ -85,6 +90,11 @@ python next_user.py
 - `currency_rates.py` - kurzy a mapování měn
 - `validation.py` - validační funkce vstupu
 - `user.json` - lokální databáze uživatelů (měla by zůstat ignorovaná v git)
+- `withdraw_money.py` - Výběr peněz z pokladny
+- `deposit_money.py` - Vklad peněz do pokladny
+- `transaction_history.py` - Pohlížení historie transakcí
+- `cash_register.json` - Stav financí v pokladně (měla by zůstat ignorovaná v git)
+- `cash_register_transactions.json` - Log historie transakcí (měl by zůstat ignorovaná v git)
 
 ### Bezpečnost
 - Hesla jsou hashovaná pomocí `bcrypt`.
