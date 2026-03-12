@@ -9,10 +9,10 @@ def transaction_history():
     if not logs:
         print("Žádné transakce nebyly nalezeny.")
     else:
-        print(f"{'Čas':<20} | {'Typ':<10} | {'Částka':<10} | {'Měna':<5} | {'Uživatel':<10}")
+        print(f"{'Čas':<20} | {'Typ':<20} | {'Částka':<20} | {'Měna':<8} | {'Uživatel':<12}")
         print("-" * 65)
         for log in logs:
             t_type = log['type']
-            print(f"{log['ts']:<20} | {t_type:<10} | {log['amount']:<10.2f} | {log['currency']:<5} | {log['user']:<10}")
+            print(f"{log['ts']:<20} | {t_type:<20} | {log['amount']:<20.2f} | {log['currency']:<8} | {log['user']:<12}")
     
     continue_prompt()

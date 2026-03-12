@@ -1,4 +1,4 @@
-from utils import header, continue_prompt
+from utils import header
 from cash_register.deposit_money import deposit_money
 from cash_register.withdraw_money import withdraw_money
 from cash_register.cashier_balance import cashier_balance

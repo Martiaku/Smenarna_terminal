@@ -1,12 +1,13 @@
 ﻿
 from utils import load_json, save_json, header, continue_prompt, add_transaction_log
 from validation import validation_float
-from currency_rates import NAME_CURRENCY, RATES
+from currency_rates import get_currency_maps
 
 # Implementation of the function for receiving money into the cash register
 
 def deposit_money():
     header("Příjem peněz do pokladny")
+    NAME_CURRENCY, BUY_RATES, SELL_RATES = get_currency_maps()
     
     # Listing me for users
     for key, value in NAME_CURRENCY.items():
